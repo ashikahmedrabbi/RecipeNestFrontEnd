@@ -1,0 +1,174 @@
+:root {
+  --yellow-500: #ffc107; /* Example color, adjust as needed */
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--yellow-500) !important;
+}
+
+.navbar-nav .nav-link {
+  color: #1e4870;
+}
+
+.c {
+  color: black !important;
+}
+.c:hover {
+  color: var(--yellow-500) !important;
+}
+.c1 {
+  color: black !important;
+}
+.c1:hover {
+  color: var(--yellow-500) !important;
+}
+
+.text-nav {
+  color: var(--yellow-500) !important;
+}
+
+.custom-bg-color {
+  background-color: var(--yellow-500) !important;
+}
+.custom-background {
+  background-image: url("images/bg-01.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-background-about {
+  background-image: url("images/about-shape-3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-background-offer {
+  position: relative; /* Ensure the pseudo-element is positioned relative to this element */
+  background-image: url("images/offer.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.custom-background-offer::before {
+  /* content: ""; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    4,
+    4,
+    4,
+    0.2
+  ); /* Increase the opacity for better readability */
+  z-index: 1; /* Ensure the overlay is on top of the background image */
+  border-radius: 10px;
+}
+
+.custom-background-offer .content {
+  position: relative;
+  z-index: 2; /* Ensure the content is above the overlay */
+  color: white; /* Ensure the text is white */
+  border-radius: 10px;
+}
+
+.custom-background-offer .text-white {
+  color: white; /* Ensure the text is white */
+}
+
+/* footer start */
+.custom-background-footer {
+  position: relative; /* Ensure the pseudo-element is positioned relative to this element */
+  background-image: url("https://img.freepik.com/premium-photo/christmas-decorations-table_159975-1131.jpg?w=740");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.custom-background-footer::before {
+  /* content: ""; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Increase the opacity for better readability */
+  z-index: 1; /* Ensure the overlay is on top of the background image */
+}
+
+.custom-background-footer .content {
+  position: relative;
+  z-index: 2; /* Ensure the content is above the overlay */
+  /* Ensure the text is white */
+}
+.footer-text {
+  color: #000;
+}
+/* footer end */
+
+.font {
+  font-size: 60px !important;
+}
+.font2 {
+  font-size: 45px !important;
+}
+.font3 {
+  font-size: 35px !important;
+}
+.font4 {
+  font-size: 55px !important;
+}
+.about-box1 {
+  background-color: #87b7e5;
+}
+.about-box2 {
+  background-color: #edf4fb;
+}
+.about-box3 {
+  background-color: #1e4870;
+}
+.about-text {
+  color: #1e4870;
+}
+.about-bg {
+  background-color: #fcfcfc;
+}
+.about-bg3 {
+  background-color: #d1c4f9;
+}
+.about-box1-bg {
+  border-radius: 50%;
+}
+.about-bg1 {
+  border-radius: 50%;
+}
+.about-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 300px;
+  margin-top: 20px;
+}
+
+.offer {
+  padding-top: 170px;
+}
+.offer-b {
+  border: none;
+}
+.input {
+  padding: 15px 25px;
+  border: 10px;
+  margin: 10px;
+  box-shadow: 4px 4px 8px gray;
+  border-radius: 5px;
+}

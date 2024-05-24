@@ -99,28 +99,32 @@
     <div class="mt-5 pt-5">
 
     </div>
-    <h1 class="custom-color mt-5 mb-4">Please Post your Recipe</h1>
+    <h1 class="about-text fw-bold text-center">Please Share your Own Recipe</h1>
         
 
-    <div class="login-container mt-5 pt-5">
+    <div class="login-container mt-5 ">
        
       <div class="d-flex justify-content-center border border-dark text-center rounded">
+        <div class="pt-5">
+
+        </div>
         
-        <form action="" onsubmit="handleRegistration(event)">
+        <form action="" onsubmit="handleRegistration(event) ">
           <p id="error" class="text-danger"></p>
           <input
             id="title"
             type="text"
-            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4"
+            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4 mt-5"
             placeholder="Title"
             required
           />
           
           
+          
           <input
             id="description"
             type="text"
-            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4"
+            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4 mt-3"
             placeholder="Description"
             required
           />
@@ -147,8 +151,8 @@
           
           <input
             id="creation_date"
-            type="datetime"
-            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4"
+            type="date"
+            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4 mt-3"
             placeholder="creation_date"
             required
           />
@@ -156,38 +160,36 @@
           <input
             id="image"
             type="file"
-            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4"
+            class="py-2 border border-dark rounded ps-4 w-75 ms-2 mb-4 mt-3"
             placeholder="Image"
             required
           />
-<br>
-          <label for="" class="  mb-2">Instructions</label>
-        <div class="form-floating mb-3 ps-5">
+
           
-          <textarea id="instructions" class="form-control ms-5 border border-dark" placeholder="Leave a comment here" value="Leave a comment here"id="floatingTextarea2" style="height: 100px; width: 600px;"></textarea>
+        
+          
+         <div class="ms-3 mt-3">
+          <div class="ms-5 ">
+            <textarea id="instructions" class="form-control ms-5 border border-dark ps-4  " placeholder="Instructions" value="Instructions"style="height: 100px; width: 725px;"></textarea>
          
-        </div> 
-
-          <label for="" class="  mb-2">Ingredients</label>
-        <div class="form-floating mb-3 ps-5">
-          
-          <textarea id="ingredients" class="form-control ms-5 border border-dark" placeholder="Leave a comment here" value="Leave a comment here"id="floatingTextarea2" style="height: 100px; width: 600px;"></textarea>
+          </div>
+         </div>
+         <div class="ms-3 mt-3 mb-3">
+          <div class="ms-5 mt-3 pt-3">
+            <textarea id="ingredients" class="form-control ms-5 border border-dark ps-4 mt-3  " placeholder="Ingredients" value="Ingredients"style="height: 100px; width: 725px;"></textarea>
          
-        </div>
+          </div>
+         </div>
+        
+
+        
           
           
-          <input type="submit" class="btn custom-bg-color custom-bg-color:hover text-white text-decoration-none w-75 ms-2 mt-2 mb-2" value="Registration" />
+          <input type="submit" class="btn about-box3 about-box3:hover text-white text-decoration-none w-75 ms-2 mt-2 mb-5" value="Share Recipe" />
           
           
 
-            <div class="text-center mb-5 mt-4">
-
-              <a href="login.html" class="text-black text-decoration-nonen w-75 text-center "
-              >Already Have an Account?</a
-            >
-
-            </div>
-            
+           
         
          
         </form>
@@ -274,6 +276,10 @@
       </section>
     
       <!-- footer end -->
+<script src="login.js"></script>
+<script src="auth.js"></script>
+<script src="logout.js"></script>
+
 
 
 

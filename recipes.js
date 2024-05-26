@@ -9,7 +9,21 @@ const displayRecipes = (recipes) => {
   recipes?.forEach((recipe) => {
     const parent = document.getElementById("recipes");
     const div = document.createElement("div");
-    // div.classList.add("doc-card");
+
+    const creationDate = new Date(recipe.creation_date);
+
+    // Format the date and time
+    const formattedDate = creationDate.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    const formattedTime = creationDate.toLocaleTimeString(undefined, {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+
     div.innerHTML = `
     <div class="col">
     <div class="card mb-3" style="max-width: 540px">
@@ -34,7 +48,7 @@ const displayRecipes = (recipes) => {
                   type="button"
                   class="border border-0 rounded py-1 about-box3 px-2   text-white"
                 >
-                  <i class="fa-regular fa-clock"></i>${recipe.creation_date}
+                  <i class="fa-regular fa-clock"></i> ${formattedDate}
                 </button>
               </div>
             </div>

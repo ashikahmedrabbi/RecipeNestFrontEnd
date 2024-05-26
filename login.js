@@ -1,4 +1,6 @@
-const handleLogin = async (event) => {
+document.getElementById("loginForm").addEventListener("submit", handleLogin);
+
+async function handleLogin(event) {
   event.preventDefault();
   const username = getValue("username");
   const password = getValue("password");
@@ -21,25 +23,27 @@ const handleLogin = async (event) => {
     }
 
     const data = await response.json();
-
     if (data.jwt) {
       localStorage.setItem("token", data.jwt);
-      toggleNavbarButtons(); // Call this function to update the button display
+      localStorage.setItem("isLoggedIn", "true");
+      //toggleNavbarButtons();
       window.location.href = "index.html";
     } else {
-      displayError("Login failed. Please check your credentials and try again.");
+      displayError(
+        "Login failed. Please check your credentials and try again."
+      );
     }
   } catch (error) {
     console.error("Error during login:", error);
     displayError("An error occurred during login. Please try again.");
   }
-};
+}
 
-const getValue = (id) => {
+function getValue(id) {
   return document.getElementById(id).value;
-};
+}
 
-const displayError = (message) => {
+function displayError(message) {
   const errorElement = document.getElementById("loginError");
   if (errorElement) {
     errorElement.textContent = message;
@@ -47,36 +51,23 @@ const displayError = (message) => {
   } else {
     console.error("Error element not found in the DOM.");
   }
-};
+}
 
-const isLoggedIn = () => {
-  const token = localStorage.getItem("token");
-  return token !== null;
-};
+// document.addEventListener("DOMContentLoaded", toggleNavbarButtons);
 
-const toggleNavbarButtons = () => {
-  const loginButton = document.getElementById("loginButton");
-  const logoutButton = document.getElementById("logoutButton");
+// function toggleNavbarButtons() {
 
-  if (isLoggedIn()) {
-    logoutButton.style.display = "block";
-    loginButton.style.display = "none";
-  } else {
-    logoutButton.style.display = "none";
-    loginButton.style.display = "block";
-  }
-};
-document.addEventListener("DOMContentLoaded", toggleNavbarButtons);
+//   const logoutButton = document.getElementById("logoutButton");
 
-// Call toggleNavbarButtons after successful login
-// Example: After setting the token in localStorage
-localStorage.setItem("token", "your_token_here");
-toggleNavbarButtons()
+//   if (isLoggedIn()) {
+//     logoutButton.style.display = "block";
+//     loginButton.style.display = "none";
+//   } else {
+//     logoutButton.style.display = "none";
+//     loginButton.style.display = "block";
+//   }
+// }
 
-const handleLogout = () => {
-  localStorage.removeItem("token");
-  toggleNavbarButtons(); // Call this function to update the button display
-  window.location.href = "index.html";
-};
-
-document.addEventListener("DOMContentLoaded", toggleNavbarButtons);
+// function isLoggedIn() {
+//   return localStorage.getItem("isLoggedIn") === "true";
+// }

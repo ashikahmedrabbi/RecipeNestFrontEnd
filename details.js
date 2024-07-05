@@ -33,48 +33,36 @@ const displayDetails = (recipe) => {
   });
 
   div.innerHTML = `
-    <div class="col">
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img
-            src=${recipe.image}
-            class="img-fluid rounded-start blog-img"
-            alt="..."
-          />
+    
+  <div class="mb-3 container-lg mx-auto mt-5 px-5">
+  <h5 class="font2 fw-bold mb-5 text-center">${recipe.title}</h5>
+        <div class="text-center mt-5 mb-5">
+          <img src=${recipe.image} class="" alt="..." width="700" height="400" >
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <div
-              class="d-flex justify-content-between align-items-center card-title px-2"
-            >
-              <div>
-                <h5>${recipe.user}</h5>
-              </div>
-              <div>
-                <button
-                  type="button"
-                  class="border border-0 rounded py-1 about-box3 px-2 text-white"
+        <div class="card-body  ">
+         
+          <div
+                  class="d-flex justify-content-between align-items-center card-title "
                 >
-                  <i class="fa-regular fa-clock"></i> ${formattedDate}
-                </button>
-              </div>
-            </div>
-            <h5 class="fw-bold">${recipe.title}</h5>
-            <p class="card-text">
-            ${recipe.description}
-            </p>
-            <p class="card-text">
-            ${recipe.ingredients}
-            </p>
-            <p class="card-text">
-            ${recipe.instructions}
-            </p>
+                  <div>
+                    <h5><span class="fw-bold">Chef Name : </span> ${recipe.user}</h5>
+                  </div>
+                  <div>
+    
+                    <span class="fw-bold">Creation Date :  </span>
+                    <button
+                      type="button"
+                      class="border border-0 rounded py-1 about-box3 px-2 text-white"
+                    >
+                      <i class="fa-regular fa-clock"></i> ${formattedDate}
+                    </button>
+                  </div>
           </div>
+          <p class="card-text"><h5> <span class="fw-bold">Description : </span> <small class="text-muted"> ${recipe.description}</small></p>
+          <p class=""><span class="fw-bold">Ingredients: </span> <small class="text-muted"> ${recipe.ingredients}</small></p>
+          <p class=""><span class="fw-bold">Instructions:</span> <small class="text-muted">Instructions:  ${recipe.instructions}</small></p>
         </div>
-      </div>
-    </div>
-  </div>
+         </div>
           `;
 
   parent.appendChild(div);

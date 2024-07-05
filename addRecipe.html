@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard (Add New Recipe) - RecipesNext</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/4ee5f1f089.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Replace with your custom CSS file -->
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
+    <style>
+      .btn-modern {
+        width: 90%;
+        padding: 5px 5px;
+
+        color: white;
+        border-radius: 15px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn-modern:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      .btn-modern:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+          <div class="sidebar bg-light border-end" style="height: 150vh">
+            <div class="p-4">
+              <h4 class="nav-link active px-4 fw-bold text-nav fs-3">
+                My Dashboard
+              </h4>
+              <ul class="list-unstyled mt-4">
+                <li>
+                  <a
+                    href="index.html"
+                    class="nav-link active px-4 fw-bold pb-3 fs-5"
+                  >
+                    <i class="fa-solid fa-house"></i> Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="blog.html"
+                    class="nav-link active px-4 fw-bold pb-3 fs-5"
+                  >
+                    <i class="fa-solid fa-utensils"></i> Recipes
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="about.html"
+                    class="nav-link active px-4 fw-bold pb-3 fs-5"
+                  >
+                    <i class="fa-solid fa-file-invoice"></i> About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="contact.html"
+                    class="nav-link active px-4 fw-bold pb-3 fs-5"
+                  >
+                    <i class="fa-regular fa-address-card"></i> Contact
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a
+                    href="addRecipe.html"
+                    class="nav-link active px-4 fw-bold pb-3 fs-5 pt-2"
+                  >
+                    <i class="fa-solid fa-square-plus"></i> Add New Recipe
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="allMyRecipes.html"
+                    class="nav-link active px-4 fw-bold pb-3 fs-5"
+                  >
+                    <i class="fa-solid fa-utensils"></i> My All Recipes
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="editProfile.html"
+                    class="nav-link active px-4 fw-bold pb-3 fs-5"
+                  >
+                    <i class="fa-solid fa-user"></i> Edit Profile
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="col-md-9 custom-background-dashboard">
+          <div class="main-content container-lg px-4 pt-4 mt-3">
+            <div class="text-center">
+              <h1 class="font1 fw-bold">
+                <span class="about-text">Add A Unique Tasty Recipe!!</span>
+              </h1>
+              <p class="text-muted">
+                Add a unique and tasty recipe to our collection! Share your
+                culinary masterpiece and inspire others with your innovative
+                flavors and creative cooking techniques.
+              </p>
+            </div>
+
+            <div class="container-lg px-5 mt-5 pt-3">
+              <div class="container-lg px-4">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="name" class="form-label fw-bold">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="title" class="form-label fw-bold"
+                        >Title</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="title"
+                        placeholder="Recipe title"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="description" class="form-label fw-bold"
+                        >Description</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="description"
+                        rows="3"
+                        placeholder="Brief description of the recipe"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="ingredients" class="form-label fw-bold"
+                        >Ingredients</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="ingredients"
+                        rows="3"
+                        placeholder="List of ingredients"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="instructions" class="form-label fw-bold"
+                        >Instructions</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="instructions"
+                        rows="4"
+                        placeholder="Step-by-step instructions"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="creation_date" class="form-label fw-bold"
+                        >Creation Date</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="creation_date"
+                        placeholder="Select creation date"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="recipe_image" class="form-label fw-bold"
+                        >Recipe Image</label
+                      >
+                      <input
+                        class="form-control"
+                        type="file"
+                        id="recipe_image"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 text-center mt-3">
+                      <button
+                        type="submit"
+                        class="btn btn btn-modern about-box3"
+                      >
+                        Submit Recipe
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
